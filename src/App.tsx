@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+
+import DesktopIcon from "./DesktopIcon";
+import AppNotepad from "./AppNotepad";
+import AppImageGallery from "./AppImageGallery";
+
+type AppProcess = {
+    pId: number,
+    appNode: React.ReactNode
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [appProcesses, setAppProcesses] = useState<AppProcess[]>([{
+        pId: 123,
+        appNode: <AppNotepad appClosedCallback={onAppClosedCallback} pId={123}></AppNotepad>
+    }]);
+    const [pId, setPId] = useState(0);
+
+    function onAppClosedCallback(pId: number) {
+        let processes = appProcesses;
+
+        const index = processes.findIndex(process => process.pId === pId);
+        processes.splice(index, 1);
+
+        setAppProcesses(processes);
+    }
+
+    function onDesktopIconClickedCallback(appId: string) {
+
+        let newProcessId: number = pId + 1;
+        setPId(newProcessId);
+
+        let appNode: JSX.Element|undefined;
+
+        switch (appId) {
+            case "notepad":
+                appNode = <AppNotepad appClosedCallback={onAppClosedCallback} pId={newProcessId}></AppNotepad>
+                break;
+            case "imagegallery":
+                appNode = <AppImageGallery appClosedCallback={onAppClosedCallback} pId={newProcessId}></AppImageGallery>
+                break;
+        }
+
+        if (appNode === undefined) {
+            return;
+        }
+
+        let process: AppProcess = {
+            pId: newProcessId,
+            appNode: appNode
+        }
+
+        let appsActiveCurrent = appProcesses;
+        appsActiveCurrent.push(process)
+        setAppProcesses(appsActiveCurrent);
+    }
+
+    return (
+        <div>
+            <DesktopIcon title={"Notepad"} appId={"notepad"} clickCallback={onDesktopIconClickedCallback} />
+            <DesktopIcon title={"Image Gallery"} appId={"imagegallery"} clickCallback={onDesktopIconClickedCallback} />
+            {appProcesses.map((appProcess) => <div key={appProcess.pId} >{appProcess.appNode}</div>)}
+        </div>
+    );
 }
 
 export default App;
