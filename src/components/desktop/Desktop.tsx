@@ -4,10 +4,6 @@ import type {XYCoord} from 'react-dnd'
 import type {DragItem} from "./window/DragItemType";
 import type {Application} from "../applications/ApplicationType";
 import {DesktopIcon} from "./desktop-icon/DesktopIcon";
-import {AppNotepad} from "../applications/notepad/AppNotepad";
-import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
-import {AppBrowser} from "../applications/browser/AppBrowser";
-import {AppSettings} from "../applications/settings/AppSettings";
 import {Window} from "./window/Window";
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 import {DragItemType} from "./window/DragItemType";
@@ -16,6 +12,11 @@ import MenuTaskBar from "../MenuBar";
 import windowsten from "../Icons/windowsten.jpg";
 import {FcDocument} from 'react-icons/fc';
 import {FcPicture} from 'react-icons/fc';
+import {AppNotepad} from "../applications/notepad/AppNotepad";
+import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
+import {AppBrowser} from "../applications/browser/AppBrowser";
+import {AppSettings} from "../applications/settings/AppSettings";
+import {AppRecycleBin} from "../applications/recycle-bin/AppRecycleBin";
 
 export const Desktop1 = () => {
 
@@ -77,6 +78,9 @@ export const Desktop1 = () => {
                 break;
             case ApplicationIdEnum.BROWSER:
                 appNode = <AppBrowser></AppBrowser>
+                break;
+            case ApplicationIdEnum.RECYCLEBIN:
+                appNode = <AppRecycleBin></AppRecycleBin>
                 break;
         }
 

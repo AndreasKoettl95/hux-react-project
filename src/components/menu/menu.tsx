@@ -29,7 +29,7 @@ export const appsArr = [
     {icon: <FcCamera />, name: 'Camera', id: 8, appId: ""},
     {icon: <FcDocument />, name: 'Notepad', id: 9, appId: ApplicationIdEnum.NOTEPAD},
     {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ""},
-    {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ""}];
+    {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ApplicationIdEnum.RECYCLEBIN}];
 
 type MenuProps = {
     onMenuItemClickedCallback: Function
