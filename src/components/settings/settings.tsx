@@ -8,11 +8,13 @@ import {MdApps} from 'react-icons/md';
 import {MdAccountBox}   from 'react-icons/md';
 import {IoMdTime} from 'react-icons/io';
 import {IoMdLock} from 'react-icons/io';
+import { useState } from 'react';
 const Settings = () => {
     function handleSearch() {
         alert("Search clicked");
     }
-    function personalize() {
+    function onSystem() {
+        
         alert("Personalize clicked");
     }
     return (
@@ -23,7 +25,7 @@ const Settings = () => {
                 <VscSearch className={styles.searchIcon} onClick={handleSearch}/>
                 <div className={styles.items}>
                     <div className={styles.top}>
-                        <div className={styles.item} onClick={personalize}>
+                        <div className={styles.item} onClick={onSystem}>
                         <MdComputer className={styles.icon}/>
                         System
                         </div>
