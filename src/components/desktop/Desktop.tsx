@@ -20,6 +20,7 @@ import {AppRecycleBin} from "../applications/recycle-bin/AppRecycleBin";
 import {AppCamera} from "../applications/camera/AppCamera";
 import {AppClock} from "../applications/clock/AppClock";
 import {AppCalender} from "../applications/calender/AppCalender";
+import {AppVideoPlayer} from "../applications/video-player/AppVideoPlayer";
 
 export const Desktop1 = () => {
 
@@ -93,6 +94,9 @@ export const Desktop1 = () => {
                 break;
             case ApplicationIdEnum.CALENDER:
                 appNode = <AppCalender></AppCalender>
+                break;
+            case ApplicationIdEnum.VIDEOPLAYER:
+                appNode = <AppVideoPlayer></AppVideoPlayer>
                 break;
         }
 

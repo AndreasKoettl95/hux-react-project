@@ -6,5 +6,6 @@ export const ApplicationIdEnum = {
     RECYCLEBIN: "Recycle Bin",
     CAMERA: "Camera",
     CLOCK: "Clock",
-    CALENDER: "Calender"
+    CALENDER: "Calender",
+    VIDEOPLAYER: "Video Player"
 }
