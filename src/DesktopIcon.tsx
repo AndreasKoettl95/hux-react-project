@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './DesktopIcon.css';
 import type {DesktopIconProps} from "./DesktopIconPropsType";
 
@@ -11,7 +10,7 @@ export const DesktopIcon = (props: DesktopIconProps) => {
 
     return (
         <div onDoubleClick={() => onDoubleClick(props)} className="desktop-icon">
-            <img src={logo} alt="" className="desktop-icon-image"/>
+            <img alt="" className="desktop-icon-image"/>
             <span>{props.title}</span>
         </div>
     );

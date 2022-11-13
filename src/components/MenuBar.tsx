@@ -6,10 +6,22 @@ import explorerIcon from './Icons/explorerIcon.png';
 import fileIcon from './Icons/fileIcon.png';
 import searchIcon from './Icons/searchIcon.png';
 import windowsIcon from './Icons/windowsIcon.png';
-export default function MenuTaskBar() {
+import {ApplicationIdEnum} from "../ApplicationIdType";
+
+type TaskBarProps = {
+    onMenuClickedCallback: Function,
+    onTaskbarIconClickedCallback: Function
+};
+
+export default function MenuTaskBar(props: TaskBarProps) {
     const clickWindows = () => {
-        alert("Menu opened");
-      }
+        props.onMenuClickedCallback();
+    }
+
+    const onClickTaskbarIcon = (appId: string) => {
+        props.onTaskbarIconClickedCallback(appId);
+    }
+
     return (
         <div className='menuBar'>
             <div className="MenuBarLeft">
@@ -19,10 +31,10 @@ export default function MenuTaskBar() {
                 <div className="barIcons">
                     <img src={searchIcon} />
                 </div>
-                <div className="barIcons">
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.NOTEPAD)}}>
                     <img src={fileIcon} />
                 </div>
-                <div className="barIcons">
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.IMAGEGALLERY)}}>
                     <img src={explorerIcon} />
                 </div>
             </div>

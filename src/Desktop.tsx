@@ -10,9 +10,21 @@ import {Window} from "./Window";
 import {ApplicationId} from "./ApplicationIdType";
 import {ApplicationIdEnum} from "./ApplicationIdType";
 import {DragItemType} from "./DragItemType";
+import Menu from "./components/menu/menu";
+import Settings from "./components/settings/settings";
+import MenuTaskBar from "./components/MenuBar";
+import windowsten from "./components/Icons/windowsten.jpg";
 
-export const Desktop = () => {
+export const Desktop1 = () => {
 
+    const desktopStyle = {
+        backgroundImage: `url(${windowsten})`,
+        backgroundSize: 'cover',
+        height: '100vh',
+        width: '100%',
+    };
+
+    const [menuOpen, setMenuOpen] = useState(false);
     const [runningApplications, setRunningApplications] = useState<Application[]>([]);
     const [processIdCount, setProcessIdCount] = useState(0);
 
@@ -57,6 +69,9 @@ export const Desktop = () => {
                 break;
             case ApplicationIdEnum.IMAGEGALLERY:
                 appNode = <AppImageGallery></AppImageGallery>
+                break;
+            case ApplicationIdEnum.SETTINGS:
+                appNode = <Settings></Settings>
                 break;
         }
 
@@ -109,6 +124,11 @@ export const Desktop = () => {
 
         applications.push(application)
         setRunningApplications(applications);
+        setMenuOpen(false);
+    }
+
+    const onMenuClicked = () => {
+        setMenuOpen(!menuOpen);
     }
 
     const moveApplicationWindow = useCallback(
@@ -145,8 +165,14 @@ export const Desktop = () => {
         [moveApplicationWindow],
     )
 
+    let menu: JSX.Element|undefined = undefined;
+
+    if (menuOpen) {
+        menu = <Menu onMenuItemClickedCallback={onDesktopIconClickedCallback}></Menu>;
+    }
+
     return (
-        <div ref={drop} style={{height: "100%"}}>
+        <div ref={drop} style={desktopStyle}>
             <DesktopIcon title={ApplicationIdEnum.NOTEPAD} appId={ApplicationIdEnum.NOTEPAD} clickCallback={onDesktopIconClickedCallback}/>
             <DesktopIcon title={ApplicationIdEnum.IMAGEGALLERY} appId={ApplicationIdEnum.IMAGEGALLERY} clickCallback={onDesktopIconClickedCallback}/>
             {runningApplications.map((application) => <Window key={application.processId}
@@ -157,6 +183,8 @@ export const Desktop = () => {
                                                       windowPositionTop={application.windowPositionTop}
                                                       windowTitle={application.windowTitle}
                                                       windowZIndex={application.windowZIndex}>{application.appNode}</Window>)}
+            {menu}
+            <MenuTaskBar onMenuClickedCallback={onMenuClicked} onTaskbarIconClickedCallback={onDesktopIconClickedCallback}/>
         </div>
     );
 }

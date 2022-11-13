@@ -15,7 +15,7 @@ export default function Desktop() {
   return (
     <div style={mystyle} >
       <AppIcon />
-      <MenuTaskBar />
+      <MenuTaskBar onMenuClickedCallback={() => {}} onTaskbarIconClickedCallback={() => {}}/>
     </div>
 
   );

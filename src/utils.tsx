@@ -1,5 +1,7 @@
 export type appData = {
-   icon: JSX.Element;
+    icon: JSX.Element;
     name: string
-    id: number
+    id: number,
+    appId: string,
+    onMenuItemClickedCallback: Function,
   }
