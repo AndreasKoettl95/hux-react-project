@@ -1,16 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './DesktopIcon.css';
+import type {DesktopIconProps} from "./DesktopIconPropsType";
 
-type DesktopIconProps = {
-    title: string,
-    appId: string,
-    clickCallback: Function
-};
+export const DesktopIcon = (props: DesktopIconProps) => {
 
-function DesktopIcon(props: DesktopIconProps) {
-
-    function onDoubleClick(props: DesktopIconProps) {
+    const onDoubleClick = (props: DesktopIconProps) => {
         props.clickCallback(props.appId);
     }
 
@@ -21,5 +16,3 @@ function DesktopIcon(props: DesktopIconProps) {
         </div>
     );
 }
-
-export default DesktopIcon;

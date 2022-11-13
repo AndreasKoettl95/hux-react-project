@@ -1,14 +1,16 @@
-import React from 'react';
-import Window from './Window';
+import React, {ChangeEvent, useState} from 'react';
 import './AppNotepad.css'
-import type AppProcessProps from './AppProcessProps';
 
-function AppNotepad(props: AppProcessProps) {
+export const AppNotepad = () => {
+
+    const [text, setText] = useState("");
+
+    const onChange = (event: ChangeEvent) => {
+        const target = event.target as HTMLTextAreaElement;
+        setText(target.value)
+    }
+
     return (
-        <Window title={"Notepad"} processProps={props}>
-            <textarea></textarea>
-        </Window>
+        <textarea onChange={onChange} value={text}></textarea>
     );
 }
-
-export default AppNotepad;

@@ -1,25 +1,37 @@
 import React, {useState} from 'react';
+import { useDrag } from 'react-dnd'
+import type {WindowProps} from "./WindowPropsType";
 import './Window.css';
-import type AppProcessProps from './AppProcessProps';
+import {DragItemType} from "./DragItemType";
 
-type WindowProps = {
-    children: React.ReactNode,
-    title: string
-    processProps: AppProcessProps
-};
-
-function Window(props: WindowProps) {
+export const Window = (props: WindowProps) => {
     const [windowVisible, setWindowVisible] = useState(true);
 
-    function onClickClose() {
+    const onClickClose = () => {
         setWindowVisible(false);
-        props.processProps.appClosedCallback(props.processProps.pId);
+        props.windowClosedCallback(props.processId);
     }
 
+    const onWindowClicked = () => {
+        props.windowClickedCallback(props.processId);
+    }
+
+    let processId = props.processId;
+    let windowPositionLeft = props.windowPositionLeft;
+    let windowPositionTop = props.windowPositionTop;
+
+    const [, drag, preview] = useDrag(
+        () => ({
+            type: DragItemType.WINDOW,
+            item: { processId, windowPositionLeft, windowPositionTop }
+        }),
+        [processId, windowPositionLeft, windowPositionTop],
+    )
+
     return (
-        <div className="window" style={{visibility: windowVisible ? 'visible' : 'hidden'}}>
-            <div className="window-title">
-                <span>{props.title}</span>
+        <div onClick={onWindowClicked} ref={preview} className="window" style={{ zIndex: props.windowZIndex, top: windowPositionTop, left: windowPositionLeft, visibility: windowVisible ? 'visible' : 'hidden'}}>
+            <div ref={drag} className="window-title">
+                <span>{props.windowTitle}</span>
                 <button className="window-close-button" onClick={onClickClose}>X</button>
             </div>
             <div className="window-content">
@@ -28,5 +40,3 @@ function Window(props: WindowProps) {
         </div>
     );
 }
-
-export default Window;

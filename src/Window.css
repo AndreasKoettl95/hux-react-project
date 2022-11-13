@@ -1,13 +1,12 @@
 .window {
     position: absolute;
-    top: 200px;
-    left: 200px;
     background: #2E2E2E;
     border-radius: 10px;
     width: 600px;
     height: 400px;
     display: flex;
     flex-direction: column;
+    border: #545454 1px solid;
 }
 
 .window-title {
