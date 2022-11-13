@@ -6,8 +6,8 @@ import type {Application} from "../applications/ApplicationType";
 import {DesktopIcon} from "./desktop-icon/DesktopIcon";
 import {AppNotepad} from "../applications/notepad/AppNotepad";
 import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
+import {AppBrowser} from "../applications/browser/AppBrowser";
 import {Window} from "./window/Window";
-import {ApplicationId} from "../applications/ApplicationIdType";
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 import {DragItemType} from "./window/DragItemType";
 import Menu from "../menu/menu";
@@ -62,7 +62,7 @@ export const Desktop1 = () => {
         setRunningApplications(applications);
     }
 
-    const createApplicationComponent = (applicationId: ApplicationId) => {
+    const createApplicationComponent = (applicationId: string) => {
         let appNode: JSX.Element | undefined;
 
         switch (applicationId) {
@@ -75,12 +75,15 @@ export const Desktop1 = () => {
             case ApplicationIdEnum.SETTINGS:
                 appNode = <Settings></Settings>
                 break;
+            case ApplicationIdEnum.BROWSER:
+                appNode = <AppBrowser></AppBrowser>
+                break;
         }
 
         return appNode;
     }
 
-    const createApplication = (applicationId: ApplicationId) => {
+    const createApplication = (applicationId: string) => {
         let appNode = createApplicationComponent(applicationId);
 
         if (appNode === undefined) {
@@ -110,7 +113,7 @@ export const Desktop1 = () => {
         setApplicationFocus(processId);
     }
 
-    const onDesktopIconClickedCallback = (applicationId: ApplicationId) => {
+    const onDesktopIconClickedCallback = (applicationId: string) => {
 
         let application = createApplication(applicationId);
 
