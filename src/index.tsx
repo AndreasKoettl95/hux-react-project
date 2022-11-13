@@ -10,7 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <TemporaryContainer />
+    <App />
+      <TemporaryContainer />
   </React.StrictMode>
 );
 
