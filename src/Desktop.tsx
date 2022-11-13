@@ -14,6 +14,8 @@ import Menu from "./components/menu/menu";
 import Settings from "./components/settings/settings";
 import MenuTaskBar from "./components/MenuBar";
 import windowsten from "./components/Icons/windowsten.jpg";
+import {FcDocument} from 'react-icons/fc';
+import {FcPicture} from 'react-icons/fc';
 
 export const Desktop1 = () => {
 
@@ -173,8 +175,8 @@ export const Desktop1 = () => {
 
     return (
         <div ref={drop} style={desktopStyle}>
-            <DesktopIcon title={ApplicationIdEnum.NOTEPAD} appId={ApplicationIdEnum.NOTEPAD} clickCallback={onDesktopIconClickedCallback}/>
-            <DesktopIcon title={ApplicationIdEnum.IMAGEGALLERY} appId={ApplicationIdEnum.IMAGEGALLERY} clickCallback={onDesktopIconClickedCallback}/>
+            <DesktopIcon title={ApplicationIdEnum.NOTEPAD} icon={<FcDocument size="1x"></FcDocument>} appId={ApplicationIdEnum.NOTEPAD} clickCallback={onDesktopIconClickedCallback}/>
+            <DesktopIcon title={ApplicationIdEnum.IMAGEGALLERY} icon={<FcPicture size="1x"></FcPicture>} appId={ApplicationIdEnum.IMAGEGALLERY} clickCallback={onDesktopIconClickedCallback}/>
             {runningApplications.map((application) => <Window key={application.processId}
                                                       processId={application.processId}
                                                       windowClosedCallback={onApplicationWindowClosedCallback}

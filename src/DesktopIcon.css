@@ -6,6 +6,11 @@
     padding: 5px;
     margin: 10px;
     border-radius: 3px;
+    color: white;
+}
+
+.desktop-icon svg {
+    height: 50px;
 }
 
 .desktop-icon:hover {
@@ -15,4 +20,8 @@
 
 .desktop-icon-image {
     height: 50px;
+}
+
+.desktop-icon-text {
+    text-align: center;
 }
