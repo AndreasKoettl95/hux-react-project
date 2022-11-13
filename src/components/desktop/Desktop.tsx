@@ -1,19 +1,19 @@
 import React, {useCallback, useState} from 'react';
 import {useDrop} from 'react-dnd'
 import type {XYCoord} from 'react-dnd'
-import type {DragItem} from "./DragItemType";
-import type {Application} from "./ApplicationType";
-import {DesktopIcon} from "./DesktopIcon";
-import {AppNotepad} from "./AppNotepad";
-import {AppImageGallery} from "./AppImageGallery";
-import {Window} from "./Window";
-import {ApplicationId} from "./ApplicationIdType";
-import {ApplicationIdEnum} from "./ApplicationIdType";
-import {DragItemType} from "./DragItemType";
-import Menu from "./components/menu/menu";
-import Settings from "./components/settings/settings";
-import MenuTaskBar from "./components/MenuBar";
-import windowsten from "./components/Icons/windowsten.jpg";
+import type {DragItem} from "./window/DragItemType";
+import type {Application} from "../applications/ApplicationType";
+import {DesktopIcon} from "./desktop-icon/DesktopIcon";
+import {AppNotepad} from "../applications/notepad/AppNotepad";
+import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
+import {Window} from "./window/Window";
+import {ApplicationId} from "../applications/ApplicationIdType";
+import {ApplicationIdEnum} from "../applications/ApplicationIdType";
+import {DragItemType} from "./window/DragItemType";
+import Menu from "../menu/menu";
+import Settings from "../settings/settings";
+import MenuTaskBar from "../MenuBar";
+import windowsten from "../Icons/windowsten.jpg";
 import {FcDocument} from 'react-icons/fc';
 import {FcPicture} from 'react-icons/fc';
 

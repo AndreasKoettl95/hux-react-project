@@ -1,5 +1,5 @@
 import React from "react";
-import {ApplicationProcessType} from "./ApplicationProcessType";
+import {ApplicationProcessType} from "../../applications/ApplicationProcessType";
 
 export type WindowProps = ApplicationProcessType & {
     children: React.ReactNode,

@@ -1,6 +1,6 @@
 import React from 'react';
 import './AppImageGallery.css';
-import image from './components/Icons/windowsten.jpg';
+import image from '../../Icons/windowsten.jpg';
 
 export const AppImageGallery = () => {
     return (

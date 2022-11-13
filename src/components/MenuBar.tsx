@@ -6,7 +6,7 @@ import explorerIcon from './Icons/explorerIcon.png';
 import fileIcon from './Icons/fileIcon.png';
 import searchIcon from './Icons/searchIcon.png';
 import windowsIcon from './Icons/windowsIcon.png';
-import {ApplicationIdEnum} from "../ApplicationIdType";
+import {ApplicationIdEnum} from "./applications/ApplicationIdType";
 
 type TaskBarProps = {
     onMenuClickedCallback: Function,

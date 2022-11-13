@@ -1,6 +1,6 @@
 import React from 'react';
-import './AppImageGallery.css';
-import Settings from './components/settings/settings';
+import '../image-gallery/AppImageGallery.css';
+import Settings from '../../settings/settings';
 
 export const AppSettings = () => {
     return (

@@ -15,7 +15,7 @@ import {FcFullTrash} from 'react-icons/fc';
 import Settings from '../settings/settings';
 import { appData } from '../../utils';
 import MenuItem from './menuItem';
-import {ApplicationIdEnum} from "../../ApplicationIdType";
+import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 
 
 export const appsArr = [
