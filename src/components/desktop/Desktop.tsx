@@ -7,11 +7,11 @@ import {DesktopIcon} from "./desktop-icon/DesktopIcon";
 import {AppNotepad} from "../applications/notepad/AppNotepad";
 import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
 import {AppBrowser} from "../applications/browser/AppBrowser";
+import {AppSettings} from "../applications/settings/AppSettings";
 import {Window} from "./window/Window";
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 import {DragItemType} from "./window/DragItemType";
 import Menu from "../menu/menu";
-import Settings from "../settings/settings";
 import MenuTaskBar from "../MenuBar";
 import windowsten from "../Icons/windowsten.jpg";
 import {FcDocument} from 'react-icons/fc';
@@ -73,7 +73,7 @@ export const Desktop1 = () => {
                 appNode = <AppImageGallery></AppImageGallery>
                 break;
             case ApplicationIdEnum.SETTINGS:
-                appNode = <Settings></Settings>
+                appNode = <AppSettings></AppSettings>
                 break;
             case ApplicationIdEnum.BROWSER:
                 appNode = <AppBrowser></AppBrowser>
