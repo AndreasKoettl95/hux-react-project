@@ -2,8 +2,6 @@
     position: absolute;
     background: #2E2E2E;
     border-radius: 10px;
-    width: 600px;
-    height: 400px;
     display: flex;
     flex-direction: column;
     border: #545454 1px solid;
@@ -19,7 +17,8 @@
 
 .window-content {
     padding: 0 5px 5px 5px;
-    height: 100%;
+    width: 600px;
+    height: 400px;
 }
 
 .window-close-button {
