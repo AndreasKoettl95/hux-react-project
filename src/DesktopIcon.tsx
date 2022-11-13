@@ -10,8 +10,10 @@ export const DesktopIcon = (props: DesktopIconProps) => {
 
     return (
         <div onDoubleClick={() => onDoubleClick(props)} className="desktop-icon">
-            {props.icon}
-            <span className="desktop-icon-text">{props.title}</span>
+            <div className="desktop-icon-content">
+                {props.icon}
+                <span className="desktop-icon-text">{props.title}</span>
+            </div>
         </div>
     );
 }
