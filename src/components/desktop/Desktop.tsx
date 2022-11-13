@@ -21,6 +21,7 @@ import {AppCamera} from "../applications/camera/AppCamera";
 import {AppClock} from "../applications/clock/AppClock";
 import {AppCalender} from "../applications/calender/AppCalender";
 import {AppVideoPlayer} from "../applications/video-player/AppVideoPlayer";
+import {AppAudioPlayer} from "../applications/audio-player/AppAudioPlayer";
 
 export const Desktop1 = () => {
 
@@ -97,6 +98,9 @@ export const Desktop1 = () => {
                 break;
             case ApplicationIdEnum.VIDEOPLAYER:
                 appNode = <AppVideoPlayer></AppVideoPlayer>
+                break;
+            case ApplicationIdEnum.AUDIOPLAYER:
+                appNode = <AppAudioPlayer></AppAudioPlayer>
                 break;
         }
 

@@ -7,5 +7,6 @@ export const ApplicationIdEnum = {
     CAMERA: "Camera",
     CLOCK: "Clock",
     CALENDER: "Calender",
-    VIDEOPLAYER: "Video Player"
+    VIDEOPLAYER: "Video Player",
+    AUDIOPLAYER: "Audio Player"
 }

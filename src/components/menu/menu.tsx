@@ -27,7 +27,7 @@ export const appsArr = [
     {icon: <FcClock />, name: 'Clock', id: 7, appId: ApplicationIdEnum.CLOCK},
     {icon: <FcCamera />, name: 'Camera', id: 8, appId: ApplicationIdEnum.CAMERA},
     {icon: <FcDocument />, name: 'Notepad', id: 9, appId: ApplicationIdEnum.NOTEPAD},
-    {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ""},
+    {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ApplicationIdEnum.AUDIOPLAYER},
     {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ApplicationIdEnum.RECYCLEBIN}];
 
 type MenuProps = {
