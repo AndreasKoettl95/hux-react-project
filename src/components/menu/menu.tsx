@@ -12,7 +12,6 @@ import {FcCamera} from 'react-icons/fc';
 import {FcDocument} from 'react-icons/fc';
 import {FcAudioFile} from 'react-icons/fc';
 import {FcFullTrash} from 'react-icons/fc';
-import Settings from '../settings/settings';
 import { appData } from '../../utils';
 import MenuItem from './menuItem';
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
@@ -25,7 +24,7 @@ export const appsArr = [
     {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ""},
     {icon: <FcVlc />, name: 'VLC', id: 5, appId: ""},
     {icon: <FcCalendar />, name: 'Calendar', id: 6, appId: ""},
-    {icon: <FcClock />, name: 'Clock', id: 7, appId: ""},
+    {icon: <FcClock />, name: 'Clock', id: 7, appId: ApplicationIdEnum.CLOCK},
     {icon: <FcCamera />, name: 'Camera', id: 8, appId: ApplicationIdEnum.CAMERA},
     {icon: <FcDocument />, name: 'Notepad', id: 9, appId: ApplicationIdEnum.NOTEPAD},
     {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ""},

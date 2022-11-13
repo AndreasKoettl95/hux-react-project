@@ -4,5 +4,6 @@ export const ApplicationIdEnum = {
     SETTINGS: "Settings",
     BROWSER: "Browser",
     RECYCLEBIN: "Recycle Bin",
-    CAMERA: "Camera"
+    CAMERA: "Camera",
+    CLOCK: "Clock"
 }
