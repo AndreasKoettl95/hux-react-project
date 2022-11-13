@@ -3,5 +3,6 @@ export const ApplicationIdEnum = {
     IMAGEGALLERY: "Image Gallery",
     SETTINGS: "Settings",
     BROWSER: "Browser",
-    RECYCLEBIN: "Recycle Bin"
+    RECYCLEBIN: "Recycle Bin",
+    CAMERA: "Camera"
 }

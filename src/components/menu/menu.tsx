@@ -26,7 +26,7 @@ export const appsArr = [
     {icon: <FcVlc />, name: 'VLC', id: 5, appId: ""},
     {icon: <FcCalendar />, name: 'Calendar', id: 6, appId: ""},
     {icon: <FcClock />, name: 'Clock', id: 7, appId: ""},
-    {icon: <FcCamera />, name: 'Camera', id: 8, appId: ""},
+    {icon: <FcCamera />, name: 'Camera', id: 8, appId: ApplicationIdEnum.CAMERA},
     {icon: <FcDocument />, name: 'Notepad', id: 9, appId: ApplicationIdEnum.NOTEPAD},
     {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ""},
     {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ApplicationIdEnum.RECYCLEBIN}];

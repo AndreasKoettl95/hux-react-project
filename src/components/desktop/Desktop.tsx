@@ -17,6 +17,7 @@ import {AppImageGallery} from "../applications/image-gallery/AppImageGallery";
 import {AppBrowser} from "../applications/browser/AppBrowser";
 import {AppSettings} from "../applications/settings/AppSettings";
 import {AppRecycleBin} from "../applications/recycle-bin/AppRecycleBin";
+import {AppCamera} from "../applications/camera/AppCamera";
 
 export const Desktop1 = () => {
 
@@ -81,6 +82,9 @@ export const Desktop1 = () => {
                 break;
             case ApplicationIdEnum.RECYCLEBIN:
                 appNode = <AppRecycleBin></AppRecycleBin>
+                break;
+            case ApplicationIdEnum.CAMERA:
+                appNode = <AppCamera></AppCamera>
                 break;
         }
 
