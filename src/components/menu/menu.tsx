@@ -21,7 +21,7 @@ export const appsArr = [
     {icon: <FcOpenedFolder />, name: 'File Explorer', id: 1, appId: ""},
     {icon: <FcPicture />, name: 'Photos', id: 2,  appId: ApplicationIdEnum.IMAGEGALLERY},
     {icon: <FcSettings />, name: 'Settings', id: 3, appId: ApplicationIdEnum.SETTINGS},
-    {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ""},
+    {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ApplicationIdEnum.CALCULATOR},
     {icon: <FcVlc />, name: 'VLC', id: 5, appId: ApplicationIdEnum.VIDEOPLAYER},
     {icon: <FcCalendar />, name: 'Calendar', id: 6, appId: ApplicationIdEnum.CALENDER},
     {icon: <FcClock />, name: 'Clock', id: 7, appId: ApplicationIdEnum.CLOCK},
