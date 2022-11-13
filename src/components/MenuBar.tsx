@@ -31,7 +31,7 @@ export default function MenuTaskBar(props: TaskBarProps) {
                 <div className="barIcons">
                     <img src={searchIcon} />
                 </div>
-                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.NOTEPAD)}}>
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.FILEEXPLORER)}}>
                     <img src={fileIcon} />
                 </div>
                 <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.BROWSER)}}>

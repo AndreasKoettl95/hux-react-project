@@ -23,6 +23,7 @@ import {AppCalender} from "../applications/calender/AppCalender";
 import {AppVideoPlayer} from "../applications/video-player/AppVideoPlayer";
 import {AppAudioPlayer} from "../applications/audio-player/AppAudioPlayer";
 import {AppCalculator} from "../applications/calculator/AppCalculator";
+import {AppFileExplorer} from "../applications/file-explorer/AppFileExplorer";
 
 export const Desktop1 = () => {
 
@@ -105,6 +106,9 @@ export const Desktop1 = () => {
                 break;
             case ApplicationIdEnum.CALCULATOR:
                 appNode = <AppCalculator></AppCalculator>
+                break;
+            case ApplicationIdEnum.FILEEXPLORER:
+                appNode = <AppFileExplorer></AppFileExplorer>
                 break;
         }
 

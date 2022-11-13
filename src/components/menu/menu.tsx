@@ -18,7 +18,7 @@ import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 
 
 export const appsArr = [
-    {icon: <FcOpenedFolder />, name: 'File Explorer', id: 1, appId: ""},
+    {icon: <FcOpenedFolder />, name: 'File Explorer', id: 1, appId: ApplicationIdEnum.FILEEXPLORER},
     {icon: <FcPicture />, name: 'Photos', id: 2,  appId: ApplicationIdEnum.IMAGEGALLERY},
     {icon: <FcSettings />, name: 'Settings', id: 3, appId: ApplicationIdEnum.SETTINGS},
     {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ApplicationIdEnum.CALCULATOR},

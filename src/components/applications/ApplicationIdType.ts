@@ -9,5 +9,6 @@ export const ApplicationIdEnum = {
     CALENDER: "Calender",
     VIDEOPLAYER: "Video Player",
     AUDIOPLAYER: "Audio Player",
-    CALCULATOR: "Calculator"
+    CALCULATOR: "Calculator",
+    FILEEXPLORER: "File Explorer"
 }
