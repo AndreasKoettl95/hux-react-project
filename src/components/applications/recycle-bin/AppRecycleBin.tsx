@@ -3,6 +3,8 @@ import './AppRecycleBin.css';
 
 export const AppRecycleBin = () => {
     return (
-        <p>Recycle Bin is empty.</p>
+        <div className="recycle-bin-content">
+            <p>Recycle Bin is empty.</p>
+        </div>
     );
 }
