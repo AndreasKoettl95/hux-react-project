@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import {userData} from '../user';
 import {FcOpenedFolder} from 'react-icons/fc';
 import {FcPicture}  from 'react-icons/fc';
 import {FcSettings} from 'react-icons/fc';
@@ -15,6 +14,7 @@ import {FcFullTrash} from 'react-icons/fc';
 import { appData } from '../../utils';
 import MenuItem from './menuItem';
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
+import { userData } from '../user';
 
 
 export const appsArr = [
@@ -46,9 +46,9 @@ const Menu = (props: MenuProps) => {
        };
     });
     
-    const [user, setUser] = useState<userData>(new userData("John Dunphy", "1234", "grey", false));
+    
     const [apps, setApps] = useState<appData[]>(menuItems);
-
+    const [user, setUser] = useState<userData>(new userData("John Dunphy", "1234", "grey", false,"johnnyboy"));
     const onUsernameClicked = () => {
         props.onMenuItemClickedCallback(ApplicationIdEnum.SETTINGS);
     }
