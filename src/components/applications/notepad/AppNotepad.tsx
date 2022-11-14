@@ -11,6 +11,8 @@ export const AppNotepad = () => {
     }
 
     return (
-        <textarea onChange={onChange} value={text}></textarea>
+        <div className="notepad-content">
+            <textarea onChange={onChange} value={text}></textarea>
+        </div>
     );
 }

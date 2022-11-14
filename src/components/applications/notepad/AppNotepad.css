@@ -1,4 +1,8 @@
-textarea {
+.notepad-content {
+    height: 100%;
+}
+
+.notepad-content textarea {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
