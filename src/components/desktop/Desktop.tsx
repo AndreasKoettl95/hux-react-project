@@ -30,9 +30,10 @@ export const Desktop1 = () => {
     const desktopStyle = {
         backgroundImage: `url(${windowsten})`,
         backgroundSize: 'cover',
-        height: '100vh',
-        width: '100%',
-    };
+        width: '100%', 
+        height: '100%',
+        position: 'fixed',
+    }as React.CSSProperties;
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [runningApplications, setRunningApplications] = useState<Application[]>([]);
