@@ -1,20 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import './AppClock.css';
+import Clock from 'react-clock';
+import 'react-clock/dist/Clock.css';
 
 export const AppClock = () => {
 
-    const [date, setDate] = useState(new Date());
+    const [value, setValue] = useState(new Date());
 
     useEffect(() => {
-        let timer = setInterval(() => setDate(new Date()), 1000)
+        let timer = setInterval(() => setValue(new Date()), 1000)
         return function cleanup() {
             clearInterval(timer)
         }
     });
 
     return (
-        <div className="clock-content">
-            <p>{date.toLocaleTimeString()}</p>
-        </div>
+        <div className='clock-content'>
+      <p>Current time:</p>
+      <Clock value={value} />
+    </div>
     );
 }

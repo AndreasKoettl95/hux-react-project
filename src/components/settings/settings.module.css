@@ -47,6 +47,7 @@
 .top{
     display: flex;
     margin-top: 50px;
+    margin-right: 10px;
 }
 .icon {
     width: 30px;

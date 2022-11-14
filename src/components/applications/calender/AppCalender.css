@@ -1,13 +1,15 @@
 .calender-content {
-    display: flex;
     height: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    background-color: aliceblue;
+
+}
+.calender {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.calender-content p {
-    padding: 0;
-    color: white;
-    text-align: center;
-    font-size: xxx-large;
-}
+
