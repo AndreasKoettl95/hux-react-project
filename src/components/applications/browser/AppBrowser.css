@@ -1,4 +1,8 @@
-iframe {
+.browser-content {
+    height: 100%;
+}
+
+.browser-content iframe {
     width: 100%;
     height: 100%;
 }
