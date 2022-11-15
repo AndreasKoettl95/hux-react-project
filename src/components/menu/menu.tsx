@@ -12,10 +12,9 @@ import {FcCamera} from 'react-icons/fc';
 import {FcDocument} from 'react-icons/fc';
 import {FcAudioFile} from 'react-icons/fc';
 import {FcFullTrash} from 'react-icons/fc';
-import Settings from '../settings/settings';
 import { appData } from '../../utils';
 import MenuItem from './menuItem';
-import {ApplicationIdEnum} from "../../ApplicationIdType";
+import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 
 
 export const appsArr = [
@@ -51,14 +50,11 @@ const Menu = (props: MenuProps) => {
     const [user, setUser] = useState<userData>(new userData(props.name, "1234", "grey", false));
     const [apps, setApps] = useState<appData[]>(menuItems);
 
-
-
     const onUsernameClicked = () => {
         props.onMenuItemClickedCallback(ApplicationIdEnum.SETTINGS);
     }
 
     return (
-        
         <section >
             <div className={styles.menu}>
             <div onClick={onUsernameClicked}>{user.name}</div>
@@ -70,7 +66,6 @@ const Menu = (props: MenuProps) => {
                 })
             }
             </div>
-
         </section>
     );
 }

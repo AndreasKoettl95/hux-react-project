@@ -9,7 +9,6 @@ import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 import {DragItemType} from "./window/DragItemType";
 import Menu from "../menu/menu";
 import MenuTaskBar from "../MenuBar";
-import windowsten from "../Icons/windowsten.jpg";
 import {FcDocument} from 'react-icons/fc';
 import {FcPicture} from 'react-icons/fc';
 import {AppNotepad} from "../applications/notepad/AppNotepad";
@@ -24,11 +23,12 @@ import {AppVideoPlayer} from "../applications/video-player/AppVideoPlayer";
 import {AppAudioPlayer} from "../applications/audio-player/AppAudioPlayer";
 import {AppCalculator} from "../applications/calculator/AppCalculator";
 import {AppFileExplorer} from "../applications/file-explorer/AppFileExplorer";
+import {DesktopProps} from "./DesktopPropsType";
 
-export const Desktop1 = () => {
+export const Desktop = (props : DesktopProps) => {
 
     const desktopStyle = {
-        backgroundImage: `url(${windowsten})`,
+        backgroundColor: props.bgColor,
         backgroundSize: 'cover',
         width: '100%', 
         height: '100%',
@@ -206,7 +206,7 @@ export const Desktop1 = () => {
     let menu: JSX.Element|undefined = undefined;
 
     if (menuOpen) {
-        menu = <Menu onMenuItemClickedCallback={onDesktopIconClickedCallback}></Menu>;
+        menu = <Menu name={props.user} onMenuItemClickedCallback={onDesktopIconClickedCallback}></Menu>;
     }
 
     return (

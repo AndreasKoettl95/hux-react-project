@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import LoginInputElement from "./LoginInputElement";
 import Login, {ConfigDataProps, LoginProps} from "./BackEndCommunication";
 import userIcon from "../images/Windows-10-user-icon-big.png"
-import {DesktopProps} from "../../Desktop";
+import {DesktopProps} from "../../components/desktop/DesktopPropsType";
 
 interface LoginFormProps {
     hidden : boolean,

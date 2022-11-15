@@ -9,7 +9,7 @@ function TemporaryContainer() {
 
     return (
         <div>
-            <LockScreen></LockScreen>
+            <LockScreen callback={}></LockScreen>
         </div>
     );
 }
