@@ -40,7 +40,6 @@ export default function Login(props: LoginProps) {
         ).json();
 
         for(let i = 0; i < data["data"].length; i++){
-
             if(data["data"][i]["attributes"]["password"] === props.password){
                 //fetch
                 const cData = await (
@@ -69,21 +68,13 @@ export default function Login(props: LoginProps) {
                         return;
                     }
                 }
-
-
-                props.callback(null);
-                console.log("you forgot to make a config file");
-
-
             }
-            props.callback(null);
-            console.log("Login Unsuccessfull");
 
         }
 
-
-
-
+        console.log("Login Unsuccessfull");
+        props.callback(null);
+        return;
     };
 
 

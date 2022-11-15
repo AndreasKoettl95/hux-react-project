@@ -4,11 +4,11 @@ import LockScreenBackground from "./components/LockScreenBackground";
 import LockScreenDate from "./components/LockScreenDate";
 import LoginForm from "./components/LoginForm";
 import LoginInputElement from "./components/LoginInputElement";
-import TemporaryContainer from "./TemporaryContainer";
+import {DesktopProps} from "../Desktop";
 
 
 interface LoginScreenProps{
-
+    callback(props : DesktopProps) : void
 }
 
 function LockScreen (props : LoginScreenProps){
@@ -21,11 +21,12 @@ function LockScreen (props : LoginScreenProps){
 
 
 
+
     return (
         <div onClick={handleClick} className={""}>
             <LockScreenBackground blurred={lockScreenOffscreen}></LockScreenBackground>
-             <LockScreenDate offScreen={lockScreenOffscreen}></LockScreenDate>
-             <LoginForm hidden={!lockScreenOffscreen}></LoginForm>
+            <LockScreenDate offScreen={lockScreenOffscreen}></LockScreenDate>
+            <LoginForm hidden={!lockScreenOffscreen} callback={props.callback}></LoginForm>
         </div>
     );
 }

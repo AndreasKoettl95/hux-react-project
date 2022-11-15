@@ -3,6 +3,7 @@ import React, {useState} from "react";
 
 interface LoginInputProps {
     callback(value : string) : void,
+    resetCallback() : void,
     name: string;
     isPassword: boolean;
     loginFailed : boolean;
@@ -21,6 +22,9 @@ export default function LoginInputElement (props : LoginInputProps) {
     }
 
     function handleFocus(event: React.FormEvent<HTMLInputElement>) {
+        if(props.loginFailed){
+            props.resetCallback();
+        }
         if(value == props.name){
             if(props.isPassword){
                 event.currentTarget.type = "password";

@@ -6,7 +6,7 @@ import explorerIcon from './Icons/explorerIcon.png';
 import fileIcon from './Icons/fileIcon.png';
 import searchIcon from './Icons/searchIcon.png';
 import windowsIcon from './Icons/windowsIcon.png';
-import {ApplicationIdEnum} from "./applications/ApplicationIdType";
+import {ApplicationIdEnum} from "../ApplicationIdType";
 
 type TaskBarProps = {
     onMenuClickedCallback: Function,
@@ -31,10 +31,10 @@ export default function MenuTaskBar(props: TaskBarProps) {
                 <div className="barIcons">
                     <img src={searchIcon} />
                 </div>
-                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.FILEEXPLORER)}}>
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.NOTEPAD)}}>
                     <img src={fileIcon} />
                 </div>
-                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.BROWSER)}}>
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.IMAGEGALLERY)}}>
                     <img src={explorerIcon} />
                 </div>
             </div>
