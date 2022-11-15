@@ -9,6 +9,7 @@ import {ApplicationIdEnum} from "../applications/ApplicationIdType";
 import {DragItemType} from "./window/DragItemType";
 import Menu from "../menu/menu";
 import MenuTaskBar from "../MenuBar";
+import windowsten from "../Icons/windowsten.jpg";
 import {FcDocument} from 'react-icons/fc';
 import {FcPicture} from 'react-icons/fc';
 import {AppNotepad} from "../applications/notepad/AppNotepad";
@@ -23,17 +24,44 @@ import {AppVideoPlayer} from "../applications/video-player/AppVideoPlayer";
 import {AppAudioPlayer} from "../applications/audio-player/AppAudioPlayer";
 import {AppCalculator} from "../applications/calculator/AppCalculator";
 import {AppFileExplorer} from "../applications/file-explorer/AppFileExplorer";
-import {DesktopProps} from "./DesktopPropsType";
 
-export const Desktop = (props : DesktopProps) => {
+export interface DesktopProps {
+    user : string,
+    password: string,
+    bgColor : string,
+}
 
-    const desktopStyle = {
-        backgroundColor: props.bgColor,
+export const Desktop1 = (props : DesktopProps) => {
+    const [bgCol, setBGCol] = useState(props.bgColor);
+
+    console.log(props.bgColor);
+
+    let desktopStyle = {
+        backgroundImage: `url(${windowsten})`,
+        backgroundColor: bgCol,
         backgroundSize: 'cover',
-        width: '100%', 
-        height: '100%',
-        position: 'fixed',
-    }as React.CSSProperties;
+        height: '100vh',
+        width: '100%',
+
+    };
+
+    if(props.bgColor != "" && props.bgColor != null){
+        desktopStyle = {
+            backgroundImage: ``,
+            backgroundColor: bgCol,
+            backgroundSize: 'cover',
+            height: '100vh',
+            width: '100%',
+
+        };
+    }
+
+
+    function RefreshDesktopColor(color : string){
+        setBGCol(color);
+    }
+
+
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [runningApplications, setRunningApplications] = useState<Application[]>([]);
@@ -82,7 +110,7 @@ export const Desktop = (props : DesktopProps) => {
                 appNode = <AppImageGallery></AppImageGallery>
                 break;
             case ApplicationIdEnum.SETTINGS:
-                appNode = <AppSettings></AppSettings>
+                appNode = <AppSettings user={props.user} bgColor={props.bgColor} password={props.password} RefreshDesktopColor={RefreshDesktopColor}></AppSettings>
                 break;
             case ApplicationIdEnum.BROWSER:
                 appNode = <AppBrowser></AppBrowser>
@@ -206,7 +234,7 @@ export const Desktop = (props : DesktopProps) => {
     let menu: JSX.Element|undefined = undefined;
 
     if (menuOpen) {
-        menu = <Menu name={props.user} onMenuItemClickedCallback={onDesktopIconClickedCallback}></Menu>;
+        menu = <Menu onMenuItemClickedCallback={onDesktopIconClickedCallback} name={props.user} pw={props.password} bg={props.bgColor}></Menu>;
     }
 
     return (

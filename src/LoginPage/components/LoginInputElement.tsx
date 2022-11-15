@@ -3,7 +3,6 @@ import React, {useState} from "react";
 
 interface LoginInputProps {
     callback(value : string) : void,
-    resetCallback() : void,
     name: string;
     isPassword: boolean;
     loginFailed : boolean;
@@ -22,9 +21,6 @@ export default function LoginInputElement (props : LoginInputProps) {
     }
 
     function handleFocus(event: React.FormEvent<HTMLInputElement>) {
-        if(props.loginFailed){
-            props.resetCallback();
-        }
         if(value == props.name){
             if(props.isPassword){
                 event.currentTarget.type = "password";
@@ -42,13 +38,17 @@ export default function LoginInputElement (props : LoginInputProps) {
             setValue(props.name);
         }
 
+
         event.currentTarget.className = "px-2 text-sky-100 text-opacity-75 border-2 border-sky-100 border-opacity-75 bg-black bg-opacity-70";
     }
 
     let className : string = "px-2 text-sky-100 text-opacity-75 border-2 border-sky-100 border-opacity-75 bg-black bg-opacity-70";
     if(props.loginFailed){
         className = "px-2 text-sky-100 text-opacity-75 border-2 border-sky-100 border-opacity-75 bg-red-500 bg-opacity-70";
+
     }
+
+
 
     return (
 
@@ -57,7 +57,7 @@ export default function LoginInputElement (props : LoginInputProps) {
                onChange={handleChange}
                onFocus={handleFocus}
                onBlur={handleBlur}
-          />
+        />
 
     );
 }

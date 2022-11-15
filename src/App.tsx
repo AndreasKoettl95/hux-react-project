@@ -1,27 +1,32 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import {Desktop} from "./components/desktop/Desktop";
-import {DesktopProps} from "./components/desktop/DesktopPropsType";
+import {Desktop1} from "./components/desktop/Desktop";
+import {DesktopProps} from "./components/desktop/Desktop";
+import Settings from './components/settings/settings';
 import './App.css';
+import TemporaryContainer from "./LoginPage/TemporaryContainer";
 import React, {useState} from "react";
 import LockScreen from "./LoginPage/LockScreen";
+import Menu from "./components/menu/menu";
+
 
 export const App = () => {
 
-    let hideDesktop : string = "hidden";
-    let hideLockScreen : string = "";
+
+    let hideLockScreen : boolean = false;
 
     let emptyProps : DesktopProps = {
         user : "",
         bgColor : "",
+        password: "",
     }
 
     const[lockScreenOffscreen, setLockscreenOffscreen] = useState(false);
     const[desktopProps, setDesktopProps] = useState(emptyProps);
 
     if(lockScreenOffscreen){
-        hideDesktop = "";
-        hideLockScreen = "hidden";
+
+        hideLockScreen = true;
     }
 
     function LoginCallBack(props : DesktopProps){
@@ -29,16 +34,14 @@ export const App = () => {
         setLockscreenOffscreen(true);
     }
 
+    if(!hideLockScreen){
+        return <LockScreen callback={LoginCallBack}></LockScreen>
+    }
+
+
     return (
-        <div>
-            <div className = {hideLockScreen}>
-                <LockScreen callback={LoginCallBack}></LockScreen>
-            </div>
-            <div className = {hideDesktop}>
-                <DndProvider backend={HTML5Backend}>
-                    <Desktop user={desktopProps.user} bgColor={desktopProps.bgColor}></Desktop>
-                </DndProvider>
-            </div>
-        </div>
+        <DndProvider backend={HTML5Backend}>
+                    <Desktop1 user={desktopProps.user} bgColor={desktopProps.bgColor} password={desktopProps.password}></Desktop1>
+        </DndProvider>
     );
 }

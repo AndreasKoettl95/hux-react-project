@@ -21,7 +21,7 @@ export const AppCalculator = () => {
 
     return (
         <div className="calculator-content">
-            <input value={formula} readOnly={true} />
+            <input value={formula} />
             <div className="calculator-content-grid">
                 <button className="calculator-content-number-button" onClick={() => {onButtonClicked("7")}}>7</button>
                 <button className="calculator-content-number-button" onClick={() => {onButtonClicked("8")}}>8</button>

@@ -12,6 +12,7 @@ module.exports = {
         'lockscreen-background-3': "url('./LoginPage/images/lockscreen2.jpg')",
         'lockscreen-background-4': "url('./LoginPage/images/lockscreen3.jpg')",
         'lockscreen-background-5': "url('./LoginPage/images/lockscreen4.jpg')",
+        'windowsten': "url('./components/Icons/windowsten.jpg')"
       }
     },
   },

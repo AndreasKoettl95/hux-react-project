@@ -26,24 +26,24 @@ export default function MenuTaskBar(props: TaskBarProps) {
         <div className='menuBar'>
             <div className="MenuBarLeft">
                 <div className="barIcons" onClick={clickWindows}>
-                    <img src={windowsIcon} alt="" />
+                    <img src={windowsIcon} />
                 </div>
                 <div className="barIcons">
-                    <img src={searchIcon} alt="" />
+                    <img src={searchIcon} />
                 </div>
-                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.NOTEPAD)}}>
-                    <img src={fileIcon} alt="" />
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.FILEEXPLORER)}}>
+                    <img src={fileIcon} />
                 </div>
-                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.IMAGEGALLERY)}}>
-                    <img src={explorerIcon} alt="" />
+                <div className="barIcons" onClick={() => {onClickTaskbarIcon(ApplicationIdEnum.BROWSER)}}>
+                    <img src={explorerIcon} />
                 </div>
             </div>
             <div className='MenuBarRight'>
                 <div className="barIcons">
-                    <img src={wifiIcon} alt="" />
+                    <img src={wifiIcon} />
                 </div>
                 <div className="barIcons">
-                    <img src={volumeIcon} alt="" />
+                    <img src={volumeIcon} />
                 </div>
                 <div className="barIcons">
                     <DateTime />

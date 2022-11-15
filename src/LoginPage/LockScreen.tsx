@@ -4,7 +4,8 @@ import LockScreenBackground from "./components/LockScreenBackground";
 import LockScreenDate from "./components/LockScreenDate";
 import LoginForm from "./components/LoginForm";
 import LoginInputElement from "./components/LoginInputElement";
-import {DesktopProps} from "../components/desktop/DesktopPropsType";
+import TemporaryContainer from "./TemporaryContainer";
+import {DesktopProps} from "../components/desktop/Desktop";
 
 
 interface LoginScreenProps{

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import {userData} from '../user';
 import {FcOpenedFolder} from 'react-icons/fc';
 import {FcPicture}  from 'react-icons/fc';
 import {FcSettings} from 'react-icons/fc';
@@ -15,27 +14,31 @@ import {FcFullTrash} from 'react-icons/fc';
 import { appData } from '../../utils';
 import MenuItem from './menuItem';
 import {ApplicationIdEnum} from "../applications/ApplicationIdType";
+import { userData } from '../user';
 
 
 export const appsArr = [
-    {icon: <FcOpenedFolder />, name: 'File Explorer', id: 1, appId: ""},
+    {icon: <FcOpenedFolder />, name: 'File Explorer', id: 1, appId: ApplicationIdEnum.FILEEXPLORER},
     {icon: <FcPicture />, name: 'Photos', id: 2,  appId: ApplicationIdEnum.IMAGEGALLERY},
     {icon: <FcSettings />, name: 'Settings', id: 3, appId: ApplicationIdEnum.SETTINGS},
-    {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ""},
-    {icon: <FcVlc />, name: 'VLC', id: 5, appId: ""},
-    {icon: <FcCalendar />, name: 'Calendar', id: 6, appId: ""},
-    {icon: <FcClock />, name: 'Clock', id: 7, appId: ""},
-    {icon: <FcCamera />, name: 'Camera', id: 8, appId: ""},
+    {icon: <FcCalculator />, name: 'Calculator', id: 4, appId: ApplicationIdEnum.CALCULATOR},
+    {icon: <FcVlc />, name: 'VLC', id: 5, appId: ApplicationIdEnum.VIDEOPLAYER},
+    {icon: <FcCalendar />, name: 'Calendar', id: 6, appId: ApplicationIdEnum.CALENDER},
+    {icon: <FcClock />, name: 'Clock', id: 7, appId: ApplicationIdEnum.CLOCK},
+    {icon: <FcCamera />, name: 'Camera', id: 8, appId: ApplicationIdEnum.CAMERA},
     {icon: <FcDocument />, name: 'Notepad', id: 9, appId: ApplicationIdEnum.NOTEPAD},
-    {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ""},
-    {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ""}];
+    {icon: <FcAudioFile />, name: 'Music', id: 10, appId: ApplicationIdEnum.AUDIOPLAYER},
+    {icon: <FcFullTrash />, name: 'Recycle Bin', id: 11, appId: ApplicationIdEnum.RECYCLEBIN}];
 
 type MenuProps = {
     onMenuItemClickedCallback: Function,
-    name : string,
+    name: string,
+    pw: string,
+    bg: string
 };
 
 const Menu = (props: MenuProps) => {
+
 
     let menuItems = appsArr.map(app => {
        return {
@@ -47,15 +50,17 @@ const Menu = (props: MenuProps) => {
        };
     });
     
-    const [user, setUser] = useState<userData>(new userData(props.name, "1234", "grey", false));
+    
     const [apps, setApps] = useState<appData[]>(menuItems);
-
+    const [user, setUser] = useState<userData>(new userData(props.name, "1234", "grey", false,"johnnyboy"));
     const onUsernameClicked = () => {
         props.onMenuItemClickedCallback(ApplicationIdEnum.SETTINGS);
     }
 
     return (
+        
         <section >
+
             <div className={styles.menu}>
             <div onClick={onUsernameClicked}>{user.name}</div>
             {
@@ -66,6 +71,7 @@ const Menu = (props: MenuProps) => {
                 })
             }
             </div>
+
         </section>
     );
 }
