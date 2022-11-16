@@ -45,7 +45,7 @@ export default function MenuTaskBar(props: TaskBarProps) {
                 <div className="barIcons">
                     <img src={volumeIcon} />
                 </div>
-                <div className="barIcons">
+                <div className="barIcons" style={{padding: "0", paddingRight: "10px"}} >
                     <DateTime />
                 </div>
             </div>
