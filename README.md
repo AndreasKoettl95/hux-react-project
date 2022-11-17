@@ -1,6 +1,8 @@
-# HUX1_T1 React Project
+# React.js-Project
 
-Recreating Desktop-experience with React.js.
+Project for HUX1_T1 - UNIVERSITY OF APPLIED SCIENCES UPPER AUSTRIA
+
+Goal: Recreating Desktop-experience with React.js.
 
 Team: Andreas Köttl, Punz Maximilian, Yueksel Deniz, Mojoudi Niyousha
 
