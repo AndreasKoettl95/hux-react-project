@@ -34,8 +34,6 @@ export interface DesktopProps {
 export const Desktop1 = (props : DesktopProps) => {
     const [bgCol, setBGCol] = useState(props.bgColor);
 
-    console.log(props.bgColor);
-
     let desktopStyle = {
         backgroundImage: `url(${windowsten})`,
         backgroundColor: bgCol,
@@ -56,12 +54,9 @@ export const Desktop1 = (props : DesktopProps) => {
         };
     }
 
-
     function RefreshDesktopColor(color : string){
         setBGCol(color);
     }
-
-
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [runningApplications, setRunningApplications] = useState<Application[]>([]);
