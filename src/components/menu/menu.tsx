@@ -64,9 +64,9 @@ const Menu = (props: MenuProps) => {
             <div className={styles.menu}>
             <div onClick={onUsernameClicked}>{user.name}</div>
             {
-                apps.map((app) => {
+                apps.map((app, key) => {
                     return (
-                        <MenuItem icon={app.icon} name={app.name} id={app.id} onMenuItemClickedCallback={props.onMenuItemClickedCallback} appId={app.appId}/>
+                        <MenuItem key={key} icon={app.icon} name={app.name} id={app.id} onMenuItemClickedCallback={props.onMenuItemClickedCallback} appId={app.appId}/>
                     );
                 })
             }
